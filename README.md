@@ -117,3 +117,8 @@ GPU: Titan, Titan Black, Titan X, K20, K40, K80.
 0. Run `python train_test_deploy.py 0 test` to test your model.
     - Different from Predicting, Testing requires datasets to have at least mnt labels and segmentation labels. 
     - Change `test_set=['*/', ...'*/']` in line 44 in `train_test_deploy.py` to test other datasets.
+ 
+### Docker
+    docker pull pawelgd/fingernet
+    docker run -w /home/fingernet/src -v <absolute_path_to_your_data>:<absolute_path_in_docker> -ti pawelgd/fingernet /bin/bash
+    python extract.py <input_directory> <output_directory>
